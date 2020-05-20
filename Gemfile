@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,10 +45,14 @@ group :development do
   gem 'sqlite3', '~> 1.4'
   gem 'guard', '~> 2.16', '>= 2.16.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
-
+  gem 'better_errors', '~> 2.7', '>= 2.7.1'
 end
 group :production do
   gem 'pg'
+end
+
+group :assets do
+  gem 'jquery-smooth-scroll-rails', '~> 0.0.5', :git => 'git@github.com:gretel/jquery-smooth-scroll-rails.git'
 end
 
 group :test do
