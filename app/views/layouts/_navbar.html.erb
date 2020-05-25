@@ -1,7 +1,5 @@
-<nav id="header" class="fixed w-full z-30 top-0 text-white gradient">
-
+<nav id="header" class="sticky w-full z-30 top-0 text-white gradient">
 	<div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
-
 		<div class="pl-4 flex items-center">
 			<div class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
 				 <i class="fa fa-terminal"></i> <%= link_to "ArenasDev", root_path %>
@@ -17,21 +15,20 @@
 		<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
 			<ul class="list-reset lg:flex justify-end flex-1 items-center">
 				<li class="mr-3">
-          <href id="projects" class="scroll-about inline-block py-2 px-4 text-white hover:text-gray-300 no-underline">Projects</href>
-          <%#= link_to "About", '#', class: "scroll-about inline-block py-2 px-4 text-white hover:text-gray-300 no-underline" %>
+					<% if user_signed_in? %>
+					  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger bg-red-600" %>
+					<% end %>
+          <%= link_to "About", root_path(anchor: "about"), class: "hover:underline inline-block py-2 px-4 text-white hover:text-gray-300 no-underline" %>
 				</li>
 				<li class="mr-3">
-          <href id="about" class="inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4">About</href>
-          <%#= link_to 'Projects', '#', class: "inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4" %>
+          <%= link_to 'Projects', root_path(anchor: "projects"), class: "hover:underline inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4" %>
 				</li>
 				<li class="mr-3">
-          <href id="contact" class="inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4">Contact</href>
-          <%#= link_to 'Contact', '#', class: "inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4" %>
+          <%= link_to 'Contact', root_path(anchor: "contact"), class: "hover:underline inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4" %>
 				</li>
 			</ul>
-          <%= link_to 'Blog', '#', class: "button button-lg mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75", id: "navAction" %>
+          <%= link_to 'Blog', posts_path, class: "button hover:underline button-lg mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75", id: "navAction" %>
 		</div>
 	</div>
-
 	<hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
 </nav>

@@ -13,8 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
 @import "./actiontext.scss";
 
 .gradient {
   background: linear-gradient(90deg, #C5CED0 0%, #1E83C0 100%);
+}
+
+.anchor {
+  position: relative;
+  scroll-behavior: smooth;
 }

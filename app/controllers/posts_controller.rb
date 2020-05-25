@@ -4,29 +4,31 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-      @posts = Posts.all.order(“created_at DESC”)
+      @post = Post.new
+      @posts = Post.all.order("created_at DESC")
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   # GET /posts/1/edit
   def edit
+
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-
+    @post = current_user.posts.build(post_params)
+    params.require(:post).permit(:title, :body, :description)
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -70,6 +72,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :description)
     end
 end

@@ -1,29 +1,42 @@
+<div class="flex flex-col lg:w-2/3 justify-center border shadow">
 <p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<% if user_signed_in? %>
+<button class="bg-blue-500 py-2 border px-2 rounded text-white font-bold hover:bg-blue-700 flex justify-start ml-4"><%= link_to 'Create Post', new_post_path %></button>
+<% end %>
+<h2 class="flex my-6 pb-3 justify-start px-4 text-gray-700 text-3xl font-semibold tracking-wide">Latest Articles</h2>
+<% @posts.each do |post| %>
+<div class="max-w-sm w-full my-3 lg:max-w-full lg:flex">
+  <%= image_tag "bryan.png", class: "h-auto lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden ml-4", style: "background-image", alt: "site owner avatar" %>
+  <div class="w-1/2 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="mb-8">
+      <p class="text-sm text-gray-600 flex items-center">
+        #<%= post.id %>
+      </p>
+      <div class="text-black font-bold text-xl mb-2 overflow-hidden hover:text-gray-700"><%= link_to post_path(post.id) do %>
+        <%= post.title %>
+      <% end %></div>
+      <p class="text-gray-700 text-base overflow-hidden"><%= truncate(post.description, :length => 85) %></p>
+    </div>
+    <div class="flex flex-col-2">
+      <%= link_to post, class: "flex flex-row my-2 justify-end hover:text-gray-800 mx-2" do %>
+            <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
+            <% end %>
+      <br />
+      <%= link_to edit_post_path(post), class: "hover:text-gray-800 flex flex-row my-2 justify-end mx-2" do %>
+            <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+            <% end %>
+      <br />
+      <%= link_to post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" }, class: "hover:text-gray-800 flex flex-row my-2 justify-end mx-2" do %>
+            <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+            <% end %>
+    </div>
+    <div class="flex items-center">
+      <div class="text-sm">
+        <p class="text-gray-900 leading-none"></p>
+        <p class="text-gray-600">Created on: <%= post.created_at.strftime("%b %d, %Y") %></p>
+      </div>
+    </div>
+  </div>
+</div>
+  <% end %>
+</div>
