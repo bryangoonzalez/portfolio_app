@@ -16,9 +16,6 @@
 
   <body>
 
-    <!-- app notices -->
-
-
     <%= render "/layouts/navbar" %>
 
     <% if flash[:notice] %>
@@ -41,15 +38,7 @@
 </div>
 <% end %>
 
-
     <%= yield %>
-
-
-    <% if !user_signed_in? %>
-
-    <%= render "/layouts/footer" %>
-
-    <% end %>
 
   </body>
 

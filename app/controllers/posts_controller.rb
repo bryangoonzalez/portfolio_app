@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
       @post = Post.new
-      @posts = Post.all.order("created_at DESC")
+      @posts = Post.paginate(page: params[:page]).order("created_at DESC")
   end
 
   # GET /posts/1

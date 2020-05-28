@@ -30,6 +30,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'trix-rails', require: 'trix'
+gem 'will_paginate', '~> 3.3'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

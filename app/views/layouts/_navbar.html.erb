@@ -18,13 +18,15 @@
 					<% if user_signed_in? %>
 					  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger bg-red-600" %>
 					<% end %>
-          <%= link_to "About", root_path(anchor: "about"), class: "hover:underline inline-block py-2 px-4 text-white hover:text-gray-300 no-underline" %>
+					<%= link_to 'Projects', root_path(anchor: "projects"), class: "hover:underline inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4" %>
+
 				</li>
 				<li class="mr-3">
-          <%= link_to 'Projects', root_path(anchor: "projects"), class: "hover:underline inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4" %>
+          <%= link_to "Recent Posts", root_path(anchor: "articles"), class: "hover:underline inline-block py-2 px-4 text-white hover:text-gray-300 no-underline" %>
 				</li>
 				<li class="mr-3">
-          <%= link_to 'Contact', root_path(anchor: "contact"), class: "hover:underline inline-block text-white no-underline hover:text-gray-300 hover:text-underline py-2 px-4" %>
+					<%= link_to "About", root_path(anchor: "about"), class: "hover:underline inline-block py-2 px-4 text-white hover:text-gray-300 no-underline" %>
+
 				</li>
 			</ul>
           <%= link_to 'Blog', posts_path, class: "button hover:underline button-lg mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75", id: "navAction" %>

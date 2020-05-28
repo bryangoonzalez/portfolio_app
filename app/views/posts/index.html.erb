@@ -1,13 +1,16 @@
-<div class="flex flex-col lg:w-2/3 justify-center border shadow">
+<div class="max-w-full">
 <p id="notice"><%= notice %></p>
 <% if user_signed_in? %>
-<button class="bg-blue-500 py-2 border px-2 rounded text-white font-bold hover:bg-blue-700 flex justify-start ml-4"><%= link_to 'Create Post', new_post_path %></button>
+<button class="bg-blue-500 mt-8 py-2 border px-2 rounded text-white font-bold hover:bg-blue-700 flex justify-start ml-4"><%= link_to 'Create Post', new_post_path %></button>
 <% end %>
-<h2 class="flex my-6 pb-3 justify-start px-4 text-gray-700 text-3xl font-semibold tracking-wide">Latest Articles</h2>
+<div class="digg_pagination mt-8 ml-8 pl-1">
+  <%= will_paginate @posts %>
+  </div>
+<h2 class="flex ml-5 mt-6 pb-3 justify-start px-4 text-gray-700 text-3xl font-semibold tracking-wide">Latest Articles</h2>
 <% @posts.each do |post| %>
-<div class="max-w-sm w-full my-3 lg:max-w-full lg:flex">
-  <%= image_tag "bryan.png", class: "h-auto lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden ml-4", style: "background-image", alt: "site owner avatar" %>
-  <div class="w-1/2 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+<div class="w-full w-2/5 justify-start mx-5 my-3 lg:max-w-3/5 lg:flex">
+  <%= image_tag "bryan.png", class: "border-t border-b border-l border-gray-400 h-auto lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden ml-4", style: "background-image", alt: "site owner avatar" %>
+  <div class="w-2/5 border-r border-b border border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
     <div class="mb-8">
       <p class="text-sm text-gray-600 flex items-center">
         #<%= post.id %>
@@ -17,6 +20,7 @@
       <% end %></div>
       <p class="text-gray-700 text-base overflow-hidden"><%= truncate(post.description, :length => 85) %></p>
     </div>
+    <% if user_signed_in? %>
     <div class="flex flex-col-2">
       <%= link_to post, class: "flex flex-row my-2 justify-end hover:text-gray-800 mx-2" do %>
             <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span>
@@ -30,6 +34,7 @@
             <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
             <% end %>
     </div>
+    <% end %>
     <div class="flex items-center">
       <div class="text-sm">
         <p class="text-gray-900 leading-none"></p>
@@ -39,4 +44,7 @@
   </div>
 </div>
   <% end %>
+  <div class="digg_pagination ml-8 pl-1">
+    <%= will_paginate @posts %>
+    </div>
 </div>
