@@ -50,6 +50,7 @@ group :development do
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
   gem 'better_errors', '~> 2.7', '>= 2.7.1'
 end
+
 group :production do
   gem 'pg'
 end
