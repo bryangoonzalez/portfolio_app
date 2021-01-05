@@ -1,19 +1,19 @@
-<div class="section w-full">
-    <div class="flex align-center justify-center items-center">
-      <div class="mx-5 my-5 pt-24 pb-5">
+<div class="w-full section">
+    <div class="flex items-center justify-center align-center">
+      <div class="pt-24 pb-5 mx-5 my-5">
 
 
-              <h2 class="flex justify-center text-gray-700 text-3xl font-semibold tracking-wide">Log in</h2>
+              <h2 class="flex justify-center text-3xl font-semibold tracking-wide text-gray-700">Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-  <form class="bg-white shadow-md border rounded px-8 pt-6 pb-8 mb-4">
-      <label class="block text-gray-700 text-sm font-bold my-5 pb-5" for="Email">
+  <form class="px-8 pt-6 pb-8 mb-4 bg-white border rounded shadow-md">
+      <label class="block pb-5 my-5 text-sm font-bold text-gray-700" for="Email">
         <%= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email", class: "mt-2 shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" } %>
       </label>
 
       <div class="mb-6">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="password">
         <%= f.input :password, required: true, input_html: { autocomplete: "current-password", class: "mt-2 shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" } %>
       </label>
 
@@ -27,7 +27,7 @@
         </div>
       </form>
     </div>
-      <p class="text-center text-gray-500 text-xs">
+      <p class="text-xs text-center text-gray-500">
         This area is meant only for site owner.
       </p>
   </div>

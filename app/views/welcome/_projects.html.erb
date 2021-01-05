@@ -1,0 +1,68 @@
+<div id="projects" class="pb-5 bg-white"></div>
+<section class="py-8 bg-white border-b anchor">
+	<div class="container max-w-5xl m-8 mx-auto">
+		<h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Projects</h1>
+		<div class="w-full mb-4">
+			<div class="w-64 h-1 py-0 mx-auto my-0 rounded-t opacity-25 bg-gray-800"></div>
+		</div>
+
+		<div class="flex flex-wrap">
+			<div class="w-5/6 p-6 sm:w-1/2">
+				<h3 class="mb-3 text-3xl font-bold leading-none text-gray-800">Tweeter (a twitter clone)</h3>
+				<p class="mb-8 text-gray-600"><strong>Ruby | Rails 6 | Webpack | JS | CSS | HTML</strong><br /><br />
+					This application was created on Rails 6 using Bulma, simple_form, gravatar, devise, and webpacker.
+					There are some custom HTML/CSS elements as well. This is still a prototype with static content and post creation.<br /><br />
+				Demo: <%= link_to 'Tweeter', 'https://bryan-tweeter.herokuapp.com/', class: "text-blue-500 hover:text-blue-700 underline" %><br>
+				Repo: <%= link_to 'Github', 'https://github.com/bryangoonzalez/tweeter', class: "text-blue-500 hover:text-blue-700 underline" %></p>
+			</div>
+			<div class="w-full p-6 sm:w-1/2">
+				<%= image_tag 'tweeter.gif', class: "w-full h-auto bg-gray-100 shadow border w-auto sm:h-64 mx-auto", viewBox: "0 0 1280 920" %>
+			</div>
+		</div>
+
+		<div class="flex flex-col-reverse flex-wrap sm:flex-row">
+			<div class="w-full p-6 mt-6 sm:w-1/2">
+				<%= image_tag 'chatroom.gif', class: "bg-gray-100 border shadow w-full h-auto sm:h-64 mx-auto", viewBox: "0 0 1280 920" %>
+			</div>
+			<div class="w-full p-6 mt-6 sm:w-1/2">
+				<div class="align-middle">
+					<h3 class="mb-3 text-3xl font-bold leading-none text-gray-800">Chatroom App</h3>
+					<p class="mb-8 text-gray-600"><strong>Ruby  |  Rails 5  |  Action Cable  |  Semantic U.I.  |  BCrypt</strong><br /><br />This is a basic chatroom app with Action Cable. Users are able to chat and receive live messages without the need to refresh the browser.
+						Usage is limited to registered users. The authentication system in this app is made with bcrypt. Styling is made with Semantic UI.<br /><br />
+					Demo: <%= link_to 'Chatroom App', 'https://bryan-chatroom-app.herokuapp.com/login', class: "text-blue-500 hover:text-blue-700 underline" %><br />
+					Repo: <%= link_to 'Github', "https://github.com/bryangoonzalez/messageme", class: "text-blue-500 hover:text-blue-700 underline" %></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex flex-wrap">
+			<div class="w-5/6 p-6 sm:w-1/2">
+				<h3 class="mb-3 text-3xl font-bold leading-none text-gray-800">Finance Tracker Social App</h3>
+				<p class="mb-8 text-gray-600"><strong>Ruby | Rails 6 | Webpack | JS | CSS | HTML | IEX API</strong><br /><br />
+					This application was created on Rails 6 using Bootstrap, IEX API (for stock tracking) and webpacker.
+					Some features may be unavailable on the Demo version. Users are able to follow users and view their followed Stocks.<br /><br />
+				Demo: <%= link_to 'Finance Tracker Social', 'https://bryan-finance-tracker.herokuapp.com/users/sign_in', class: "text-blue-500 hover:text-blue-700 underline" %><br>
+				Repo: <%= link_to 'Github', 'https://github.com/bryangoonzalez/finance-tracker', class: "text-blue-500 hover:text-blue-700 underline" %></p>
+			</div>
+			<div class="w-full p-6 sm:w-1/2">
+				<%= image_tag 'financetracker.gif', class: "bg-gray-100 border shadow w-full h-auto sm:h-64 mx-auto", viewBox: "0 0 1280 920" %>
+			</div>
+		</div>
+
+		<div class="flex flex-col-reverse flex-wrap sm:flex-row">
+			<div class="w-full p-6 mt-6 sm:w-1/2">
+				<%= image_tag 'projectmngr.gif', class: "bg-gray-100 border shadow w-full h-auto sm:h-64 mx-auto", viewBox: "0 0 1280 920" %>
+			</div>
+			<div class="w-full p-6 mt-6 sm:w-1/2">
+				<div class="align-middle">
+					<h3 class="mb-3 text-3xl font-bold leading-none text-gray-800">SaaS App (Project Management)</h3>
+					<p class="mb-8 text-gray-600"><strong>Ruby  |  Rails 6  |  Vue.js  |  Bulma  |  Action Text</strong><br /><br />This is a Software as a Service Project Management App. Users are confirmable via email and must be invited by a team leader.
+						Users are able to join a team they've been invited to and have access to projects created by that team. There is a recent activity tracker to see active projects and new projects as well as new team members. Includes Action Text (Rich text) project creation form.<br /><br />
+					Demo: <%= link_to 'Project Management App', 'https://bryan-saas-app.herokuapp.com/', class: "text-blue-500 hover:text-blue-700 underline" %><br />
+					Repo: <%= link_to 'Github', "https://github.com/bryangoonzalez/mission_board", class: "text-blue-500 hover:text-blue-700 underline" %></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>

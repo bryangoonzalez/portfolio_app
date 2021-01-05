@@ -9,5 +9,20 @@
 
   <body>
     <%= yield %>
+    <%# This is for the social icon links %>
+      <section id="footer" class="mb-5 w-full top-0 flex flex-row justify-start mx-auto">
+      <%= link_to "https://twitter.com/BryanAr96989579", class: "ml-2 px-2 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" do %>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to "https://www.facebook.com/brryyyaaannn/", class: "px-2 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" do %>
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to "https://www.linkedin.com/in/bryan-arenas-0b855769/", class: "px-2 py-2 mt-2 text-md font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" do %>
+      <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      <% end %>
+      <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>: (407) 583 - 9501 |
+					<span class="icon"><i class="fa fa-envelope-square" aria-hidden="true"></i></span>: codearenas@gmail.com |
+					<span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>: Orlando, FL</div>
+      </section>
   </body>
 </html>

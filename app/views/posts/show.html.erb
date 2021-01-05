@@ -1,20 +1,20 @@
-<div class="section pt-16">
+<div class="pt-16 section">
   <p id="notice"><%= notice %></p>
 
 
-<div class="mx-auto flex flex-col justify-start w-2/3 py-4 px-4 border shadow mx-auto">
+<div class="flex flex-col justify-start w-2/3 px-4 py-4 mx-auto border shadow">
   <%= link_to '< Back', :back, class: "ml-10 text-base text-blue-500 hover:text-blue-700 md:text-sm text-gray font-bold no-underline hover:underline"%>
-		<div class="px-4 md:px-6 text-lg text-grey-darkest leading-normal" style="font-family:Georgia,serif;">
+		<div class="px-4 text-lg leading-normal md:px-6 text-grey-darkest" style="font-family:Georgia,serif;">
 
 			<!--This is the header area -->
 			<div class="font-sans">
-				<span class="text-base md:text-sm text-teal font-bold"><span>
-				<h1 class="font-sans break-normal text-black pt-6 pb-2 text-3xl md:text-4xl"><%= @post.title %></h1>
-				<p class="text-sm md:text-base font-normal my-3 text-gray-700">Published: <%= @post.created_at.strftime("%b %d, %Y") %></p>
+				<span class="text-base font-bold md:text-sm text-teal"><span>
+				<h1 class="pt-6 pb-2 font-sans text-3xl text-black break-normal md:text-4xl"><%= @post.title %></h1>
+				<p class="my-3 text-sm font-normal text-gray-700 md:text-base">Published: <%= @post.created_at.strftime("%b %d, %Y") %></p>
 			</div>
       <hr>
 
-    <p class="mt-2 text-gray-900 font-sans break-normal text-md font-normal">
+    <p class="mt-2 font-sans font-normal text-gray-900 break-normal text-md">
       <%= @post.body %>
     </p>
 
